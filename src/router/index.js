@@ -9,12 +9,12 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: HomePage
+      component: HomePage,
     },
     {
       path: '/login',
       name: 'Login',
-      component: LoginPage
+      component: LoginPage,
     },
     {
       path: '/hotelResults',
@@ -23,5 +23,6 @@ const router = createRouter({
     }
   ]
 })
+
 
 export default router

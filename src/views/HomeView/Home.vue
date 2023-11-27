@@ -3,9 +3,7 @@
     <HeroLanding />
 
     <section class="relative -top-8">
-      <router-link :to="{name: 'Hotel Results'}">
         <Search />
-      </router-link>
     </section>
 
     <AlertMessage class="mt-10" />
@@ -38,7 +36,7 @@
 <script setup>
 import HeroLanding from "./HeroLanding.vue";
 import Search from "../../components/Search/Search.vue";
-import AlertMessage from "../../components/AlertMessage.vue";
+import AlertMessage from "../../UI/AlertMessage.vue";
 import HomeCards from "./HomeCards.vue";
 import HomeTrips from "./HomeTrips.vue";
 import HomeFinalBackgroundImage from "./HomeFinalBackgroundImage.vue";
