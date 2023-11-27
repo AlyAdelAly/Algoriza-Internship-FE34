@@ -1,7 +1,7 @@
 <template>
-        <SignIn />
+        <Login />
 </template>
 
 <script setup>
-import SignIn from '../components/SignIn.vue';
+import Login from '../components/Login.vue';
 </script>

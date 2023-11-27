@@ -12,6 +12,7 @@ export default {
         'orange-light': '#FCEFCA',
         'light-gray': '#EBEBEB',
         'gray': '#4F4F4F',
+        'dark-gray': '333',
         'light-black': '#181818'
       },
       fontSize: {
