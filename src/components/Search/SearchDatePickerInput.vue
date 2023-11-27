@@ -2,11 +2,12 @@
   <div class="flex items-center">
     <VueDatePicker
       v-model="date"
-      :min-date="new Date() + 1"
+      @update:model-value="emits('selectedDate', date)"
+      :min-date="props.minDate"
       :placeholder="props.placeholder"
       :enable-time-picker="false"
       input-class-name="dp-custom-input"
-      required
+      
     >
       <template #input-icon>
         <img
@@ -20,17 +21,18 @@
 </template>
   
 <script setup>
-import { ref } from "vue";
 import VueDatePicker from "@vuepic/vue-datepicker";
 import "@vuepic/vue-datepicker/dist/main.css";
+import {ref} from 'vue'
 
 const props = defineProps({
-  'placeholder': String
-})
+  placeholder: String,
+  minDate: Date
+});
 
-let emits = defineEmits(['dateSelected'])
+let emits = defineEmits(["selectedDate"]);
 
-let date = ref(new Date());
+let date = ref()
 
 </script>
 
