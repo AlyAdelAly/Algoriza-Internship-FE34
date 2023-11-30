@@ -54,7 +54,7 @@
 </template>
 
 <script setup>
-import DefaultButton from "../UI/DefaultButton.vue";
+import DefaultButton from "../components/Layout/DefaultButton.vue";
 import { ref, reactive, computed } from "vue";
 import { useRouter } from "vue-router";
 import useVuelidate from "@vuelidate/core";
