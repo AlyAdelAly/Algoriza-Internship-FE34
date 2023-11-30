@@ -36,12 +36,12 @@
 <script setup>
 import HeroLanding from "./HeroLanding.vue";
 import Search from "../../components/Search/Search.vue";
-import AlertMessage from "../../UI/AlertMessage.vue";
+import AlertMessage from "../../components/Layout/AlertMessage.vue";
 import HomeCards from "./HomeCards.vue";
 import HomeTrips from "./HomeTrips.vue";
 import HomeFinalBackgroundImage from "./HomeFinalBackgroundImage.vue";
 
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const CountriesData = ref([
   { name: "Australia", description: "2246 properties", img: "australia.png" },
@@ -100,4 +100,12 @@ const HotelsData = ref([
     img: "hotel4.png",
   },
 ]);
+
+
+onMounted(() => {
+  // remove hotel results and search field inputs from local storage when redirect to home
+  localStorage.removeItem('SearchFieldsValue')
+  localStorage.removeItem('HotelResults')
+  localStorage.removeItem('MetaResults')
+})
 </script>
