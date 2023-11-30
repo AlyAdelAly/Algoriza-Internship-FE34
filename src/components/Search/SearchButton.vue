@@ -5,5 +5,5 @@
 </template>
 
 <script setup>
-import DefaultButton from "../../UI/DefaultButton.vue";
+import DefaultButton from "../../components/Layout/DefaultButton.vue";
 </script>

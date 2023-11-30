@@ -1,13 +1,14 @@
 <template>
   <div class="flex items-center">
     <VueDatePicker
-      v-model="date"
-      @update:model-value="emits('selectedDate', date)"
-      :min-date="props.minDate"
+      :model-value="modelValue"
+      @update:model-value="updateSelectedDate"
+      :min-date="minDate"
+      :max-date="maxDate"
       :placeholder="props.placeholder"
       :enable-time-picker="false"
       input-class-name="dp-custom-input"
-      
+      required 
     >
       <template #input-icon>
         <img
@@ -26,13 +27,17 @@ import "@vuepic/vue-datepicker/dist/main.css";
 import {ref} from 'vue'
 
 const props = defineProps({
-  placeholder: String,
-  minDate: Date
+  'modelValue': Date,
+  'placeholder': String,
+  'minDate': Date,
+  'maxDate': Date
 });
 
-let emits = defineEmits(["selectedDate"]);
+let emits = defineEmits(["update:modelValue"]);
 
-let date = ref()
+const updateSelectedDate = (value) => {
+  emits('update:modelValue', value)
+}
 
 </script>
 
