@@ -12,21 +12,16 @@
       </p>
       <div class="w-[250px] h-[46px] rounded-[5px] flex flex-nowrap">
         <div
-          v-for="rating in 5"
-          :key="rating"
-          :class="[
-            `flex flex-nowrap justify-center items-center border-[#E0E0E0] border-[1px] w-[48px] h-[46px] hover:cursor-pointer ${borderStylingForFirstAndLastStars(
-              rating
-            )}`,
-          ]"
-          :title="`${rating} star${rating > 1 ? 's' : ''}`"
+          v-for="ratingNumber in 5"
+          :key="ratingNumber"
+          class="flex flex-nowrap justify-center items-center border-[#E0E0E0] border-[1px] w-[48px] h-[46px]"
+          :title="`${ratingNumber} star${ratingNumber > 1 ? 's' : ''}`"
         >
-          <p>{{ rating }}</p>
+          <p>{{ ratingNumber }}</p>
           <img
-            src="../../assets//Icons/star.svg"
-            :alt="`${rating} star${rating > 1 ? 's' : ''}`"
-            :title="`${rating} star${rating > 1 ? 's' : ''}`"
             class="w-[18px] h-[18px]"
+            src="../../assets//Icons/star.svg"
+            :alt="`${ratingNumber} star${ratingNumber > 1 ? 's' : ''}`"
           />
         </div>
       </div>
@@ -35,10 +30,6 @@
 </template>
     
 <script setup>
-import { computed } from "vue";
-let borderStylingForFirstAndLastStars = computed(
-  () => (rating) =>
-    rating === 1 ? "rounded-l-[5px]" : rating === 5 ? "rounded-r-[5px]" : ""
-);
+
 </script>
   
